@@ -8,6 +8,15 @@ title: Desafíos Técnicos
 
 Esta sección presenta desafíos técnicos con mínima guía. Aquí pones a prueba tus conocimientos, creatividad y capacidad de resolución. Cada reto está diseñado para simular situaciones reales que podrías enfrentar en campo.
 
+
+**Objetivo**: Evaluar tu dominio técnico y fomentar autonomía.
+**Ejemplo:**
+- Diseña una red para una empresa con 3 departamentos, cada uno con su VLAN.
+- Configura un router con NAT, DHCP y ACLs.
+- Detecta y corrige una configuración insegura en un servidor Linux.
+**Ideal para:** Poner a prueba lo aprendido en práctica, fundamentos y diagnósticos.
+
+
 ---
 
 ## 🚧 Retos disponibles
