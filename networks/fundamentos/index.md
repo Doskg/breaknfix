@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Fundamentos
-permalink: /fundamentos/
+permalink: networks/fundamentos/
 ---
 
 # 📚 Fundamentos de Redes
