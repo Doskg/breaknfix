@@ -8,6 +8,14 @@ title: Fundamentos Técnicos
 
 Esta sección contiene explicaciones teóricas que te ayudarán a entender el “por qué” detrás de cada tecnología. Aquí construyes la base conceptual que luego aplicarás en prácticas, diagnósticos y desafíos.
 
+
+**Objetivo:** Entender el “por qué” detrás de cada tecnología o práctica.
+**Ejemplo:**
+- ¿Qué es el modelo OSI y cómo se relaciona con TCP/IP?
+- ¿Cómo funciona el protocolo ARP?
+- ¿Qué es una dirección IP pública vs privada?
+**Ideal para:** Construir una base sólida antes o durante la práctica.
+
 ---
 
 ## 📖 Temas disponibles
