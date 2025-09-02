@@ -1,15 +1,27 @@
-# ¡Hola Mundo! 👋
+---
+layout: default
+title: BreaknFix.io – Ciberseguridad
+---
 
-Bienvenido a mi sitio web en GitHub Pages.
+# 🔐 BreaknFix.io – Ciberseguridad  
+**Documentación técnica, reconstrucción precisa, aprendizaje modular.**
 
-Este es un ejemplo básico de una página escrita en **Markdown**.
-
-## ¿Qué puedes encontrar aquí?
-
-- Proyectos
-- Enlaces útiles
-- Información de contacto
+Bienvenido a la ruta de ciberseguridad de mi bitácora técnica. Aquí registro mi aprendizaje en seguridad ofensiva, defensiva y análisis forense, estructurado en cuatro rutas complementarias:
 
 ---
 
-Gracias por visitar. ¡Que tengas un gran día! 🌟
+## 🧪 [Práctica](practica/practicaindex.md)  
+Ejercicios técnicos para aplicar conceptos clave como escaneo de puertos, análisis de tráfico y configuración de firewalls.
+
+## 📚 [Fundamentos](fundamentos/fundamentosindex.md)  
+Tutoriales con explicaciones claras sobre criptografía, modelos de amenaza, protocolos seguros y principios de defensa.
+
+## 🔍 [Diagnósticos](diagnosticos/diagnosticos.md)  
+Análisis de incidentes reales o simulados, síntomas, causas y reconstrucciones técnicas para fortalecer la respuesta ante amenazas.
+
+## 🎯 [Desafíos](desafios/desafios.md)  
+Retos prácticos para poner a prueba lo aprendido en escenarios complejos como auditorías, simulaciones de ataque y análisis forense.
+
+---
+
+> “Cada vulnerabilidad entendida es una puerta cerrada al error.”
