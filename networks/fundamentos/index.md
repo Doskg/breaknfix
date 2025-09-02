@@ -10,3 +10,8 @@ Tutoriales que explican desde cero, con analogías visuales y ejemplos cotidiano
 
 - [Routing básico](/fundamentos/routing-basico)
 - [DHCP explicado](/fundamentos/dhcp)
+
+
+# Fundamentos
+
+Bienvenido a la sección de fundamentos. Aquí empieza el dojo.
