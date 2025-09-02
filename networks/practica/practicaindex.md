@@ -10,6 +10,7 @@ Esta sección está dedicada a ejercicios guiados que te permiten aplicar lo apr
 
 
 **Objetivo:** Aprender haciendo, con instrucciones claras y resultados esperados.
+
 **Ejemplo:**
 - Configurar una red con 3 subredes usando VLSM.
 - Crear VLANs en un switch y verificar conectividad.
@@ -27,5 +28,6 @@ Esta sección está dedicada a ejercicios guiados que te permiten aplicar lo apr
 5. [Ping y traceroute: diagnóstico básico de conectividad](ping/ping1.md)
 
 ---
+
 
 > “La práctica no hace al maestro. La práctica consciente y documentada sí.”
