@@ -15,6 +15,7 @@ Esta sección está dedicada a ejercicios guiados que te permiten aplicar lo apr
 - Configurar una red con 3 subredes usando VLSM.
 - Crear VLANs en un switch y verificar conectividad.
 - Usar Wireshark para capturar paquetes ICMP.
+
 **Ideal para:** Consolidar habilidades técnicas básicas e intermedias.
 
 ---
