@@ -13,7 +13,7 @@ Welcome to my technical logbook. Here I record my journey through the world of n
 ## 🧪 [Networks](networks/indexnet.md)
 Exercises and fundamentals to build a solid foundation.
 
-## 🎯 [Security](cybersecurity/index.md)
+## 🎯 [Security](cybersecurity/index2.md)
 Practical challenges to put what you've learned to the test and explore complex scenarios.
 
 ---
