@@ -3,43 +3,19 @@ layout: default
 title: BreaknFix.io
 ---
 
-# 🧠 BreaknFix.io  
-**Errores documentados. Reconstrucciones técnicas. Aprendizaje con propósito.**
+# 🧠 BreaknFix.io
+**Technical documentation, accurate reconstruction, modular learning.**
 
-Este sitio documenta mi travesía técnica:  
-Primero, a través de **Redes en Acción**, donde cada concepto se aplica, se rompe y se reconstruye.  
-Luego, el ascenso hacia la **Ciberseguridad Ética**, entrando por la puerta del dominio técnico.
+Welcome to my technical logbook. Here I record my journey through the world of networks and cybersecurity, structured in two complementary routes:
 
 ---
 
-## 🔌 Redes en Acción
+## 🧪 [Networks](networks)
+Exercises and fundamentals to build a solid foundation.
 
-> No es solo CCNA. Es entender, aplicar, reconstruir y dominar.
-
-- 🧪 [Práctica](/practica)  
-  Ejercicios aplicados como subneteo, VLANs, configuración básica.
-
-- 📚 [Fundamentos](/fundamentos)  
-  Explicaciones conceptuales con analogías y estructura clara.
-
-- 🔍 [Diagnósticos](/Diagnosticos)  
-  Análisis de errores reales, síntomas, causas y reconstrucciones.
-
-- 🎯 [Desafíos](/desafios)  
-  Retos prácticos para aplicar lo aprendido en escenarios simulados.
+## 🎯 [Security](security)
+Practical challenges to put what you've learned to the test and explore complex scenarios.
 
 ---
 
-## 🛡️ Ciberseguridad Ética
-
-> Entrar por la puerta de redes. Subir hacia el pentesting ético.
-
-*(Secciones en construcción)*  
-- Práctica en escaneo, análisis de tráfico, y herramientas básicas.  
-- Fundamentos como el modelo CIA, firewalls, vectores de ataque.  
-- Diagnósticos de fallos en configuraciones de seguridad.  
-- Retos como TryHackMe, Hack The Box, y simulaciones éticas.
-
----
-
-> “No se trata de pasar un examen. Se trata de entender lo suficiente como para reconstruir lo que otros no pueden explicar.”
+> “Every documented error is an improvement that is not repeated by accident.”
