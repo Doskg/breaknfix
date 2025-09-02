@@ -13,7 +13,7 @@ Bienvenido a mi bitácora técnica. Aquí registro mi travesía por el mundo de 
 ## 🧪 [Práctica](/practica)
 Ejercicios técnicos para aplicar conceptos clave como subneteo, VLANs, y configuración básica.
 
-## 📚 [Fundamentos](/fundamentos)
+## 📚 [Fundamentos](/networks/fundamentos/1-cisco-packet-tracer-vlan.md)
 Tutoriales con explicaciones claras, analogías visuales y estructura conceptual.
 
 ## 🔍 [Diagnósticos](/diagnosticos)
