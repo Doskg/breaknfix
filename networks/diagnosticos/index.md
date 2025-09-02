@@ -8,6 +8,15 @@ title: Diagnósticos Técnicos
 
 Esta sección documenta fallos técnicos reales o simulados. El objetivo es desarrollar tu capacidad de análisis, identificar causas raíz y aplicar soluciones efectivas. Aquí aprendes a pensar como un técnico de campo.
 
+
+**Objetivo:** Desarrollar pensamiento crítico y habilidades de resolución de problemas.
+
+**Ejemplo:**
+- Un cliente no recibe IP: ¿es DHCP, cableado o configuración?
+- VLANs configuradas pero no hay comunicación: ¿trunking mal hecho?
+- Acceso lento a internet: ¿problema de DNS o congestión?
+**Ideal para:** Aprender a detectar, analizar y corregir fallos.
+
 ---
 
 ## 🛠️ Casos disponibles
