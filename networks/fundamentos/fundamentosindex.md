@@ -21,9 +21,12 @@ Esta sección contiene explicaciones teóricas que te ayudarán a entender el �
 
 ## 📖 Temas disponibles
 
-1. [Modelo OSI vs TCP/IP](modeloosi/modeloosi1.md)
-2. [Tipos de direcciones IP](ip/ip1.md)
-3. [Protocolos clave: ARP, DHCP, DNS](protocolos/protocolos1.md)
+1. [Modelo OSI vs TCP/IP](/networks/fundamentos/OSIvsTCPIP.md)
+2. [Tipos de direcciones IP](/networks/fundamentos/direccionesIP.md)
+3. [Protocolos clave: ARP, DHCP, DNS](/networks/fundamentos/protocolosdered.md)
+4. [Modelo OSI vs TCP/IP](modeloosi/modeloosi1.md)
+5. [Tipos de direcciones IP](ip/ip1.md)
+6. [Protocolos clave: ARP, DHCP, DNS](protocolos/protocolos1.md)
 
 
 ---
