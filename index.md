@@ -22,7 +22,7 @@ Luego, el ascenso hacia la **Ciberseguridad Ética**, entrando por la puerta del
 - 📚 [Fundamentos](/fundamentos)  
   Explicaciones conceptuales con analogías y estructura clara.
 
-- 🔍 [Diagnósticos](/diagnosticos)  
+- 🔍 [Diagnósticos](/Diagnosticos)  
   Análisis de errores reales, síntomas, causas y reconstrucciones.
 
 - 🎯 [Desafíos](/desafios)  
