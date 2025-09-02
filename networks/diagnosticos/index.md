@@ -15,6 +15,7 @@ Esta sección documenta fallos técnicos reales o simulados. El objetivo es desa
 - Un cliente no recibe IP: ¿es DHCP, cableado o configuración?
 - VLANs configuradas pero no hay comunicación: ¿trunking mal hecho?
 - Acceso lento a internet: ¿problema de DNS o congestión?
+
 **Ideal para:** Aprender a detectar, analizar y corregir fallos.
 
 ---
