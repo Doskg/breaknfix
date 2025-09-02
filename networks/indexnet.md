@@ -1,6 +1,6 @@
 ---
 layout: default
-title: BreaknFix.io
+title: BreaknFix - Redes
 ---
 
 # 🧠 BreaknFix.io  

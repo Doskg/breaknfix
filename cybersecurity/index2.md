@@ -1,6 +1,6 @@
 ---
 layout: default
-title: BreaknFix.io – Ciberseguridad
+title: BreaknFix – Ciberseguridad
 ---
 
 # 🔐 BreaknFix.io – Ciberseguridad  
