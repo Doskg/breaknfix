@@ -10,16 +10,16 @@ Bienvenido a mi bitácora técnica. Aquí registro mi travesía por el mundo de 
 
 ---
 
-## 🧪 [Práctica](/practica)
+## 🧪 [Práctica](/networks/practica/)
 Ejercicios técnicos para aplicar conceptos clave como subneteo, VLANs, y configuración básica.
 
 ## 📚 [Fundamentos](/networks/fundamentos/index.md)
 Tutoriales con explicaciones claras, analogías visuales y estructura conceptual.
 
-## 🔍 [Diagnósticos](/diagnosticos)
+## 🔍 [Diagnósticos](/networks/Diagnosticos/)
 Análisis de errores reales, síntomas, causas y reconstrucciones técnicas.
 
-## 🎯 [Desafíos](/desafios)
+## 🎯 [Desafíos](/networks/Desafios/)
 Retos prácticos para poner a prueba lo aprendido y explorar escenarios complejos.
 
 ---
