@@ -72,5 +72,5 @@ Puedes añadir imágenes para cada analogía o para representar los dos modelos.
 **Ejemplo de cómo insertar una imagen en Markdown:**
 
 ```markdown
-![Diagrama del Modelo OSI](https://i.imgur.com/tu_imagen_osi.png)
+![Diagrama del Modelo OSI](https://miro.medium.com/v2/resize:fit:720/format:webp/1*RpmJpNVdpplB0GrsbYeKzg.png)
 _Una representación visual de las siete capas del Modelo OSI._
