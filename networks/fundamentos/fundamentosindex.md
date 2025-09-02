@@ -16,6 +16,7 @@ Esta sección contiene explicaciones teóricas que te ayudarán a entender el �
 - ¿Qué es una dirección IP pública vs privada?
 **Ideal para:** Construir una base sólida antes o durante la práctica.
 
+
 ---
 
 ## 📖 Temas disponibles
