@@ -9,12 +9,11 @@ title: BreaknFix.io – Ciberseguridad
 Bienvenido a la ruta de ciberseguridad de mi bitácora técnica. Aquí registro mi aprendizaje en seguridad ofensiva, defensiva y análisis forense, estructurado en cuatro rutas complementarias:
 
 ---
+## 📚 [Fundamentos](fundamentos/fundamentosindex.md)  
+Tutoriales con explicaciones claras sobre criptografía, modelos de amenaza, protocolos seguros y principios de defensa.
 
 ## 🧪 [Práctica](practica/practicaindex.md)  
 Ejercicios técnicos para aplicar conceptos clave como escaneo de puertos, análisis de tráfico y configuración de firewalls.
-
-## 📚 [Fundamentos](fundamentos/fundamentosindex.md)  
-Tutoriales con explicaciones claras sobre criptografía, modelos de amenaza, protocolos seguros y principios de defensa.
 
 ## 🔍 [Diagnósticos](diagnosticos/diagnosticos.md)  
 Análisis de incidentes reales o simulados, síntomas, causas y reconstrucciones técnicas para fortalecer la respuesta ante amenazas.
