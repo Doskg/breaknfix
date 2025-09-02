@@ -1,17 +1,23 @@
 ---
 layout: default
-title: Fundamentos
-permalink: networks/fundamentos/
+title: Fundamentos Técnicos
 ---
 
-# 📚 Fundamentos de Redes
+# 📚 Fundamentos Técnicos  
+**Conceptos clave explicados con claridad, analogías y estructura.**
 
-Tutoriales que explican desde cero, con analogías visuales y ejemplos cotidianos. Ideal para construir una base sólida.
+Esta sección contiene explicaciones teóricas que te ayudarán a entender el “por qué” detrás de cada tecnología. Aquí construyes la base conceptual que luego aplicarás en prácticas, diagnósticos y desafíos.
 
-- [Routing básico](/fundamentos/routing-basico)
-- [DHCP explicado](/fundamentos/dhcp)
+---
 
+## 📖 Temas disponibles
 
-# Fundamentos
+1. [Modelo OSI vs TCP/IP](modeloosi/modeloosi1.md)
+2. [Tipos de direcciones IP](ip/ip1.md)
+3. [Protocolos clave: ARP, DHCP, DNS](protocolos/protocolos1.md)
+4. [Seguridad en capas: defensa en profundidad](seguridad/seguridad1.md)
+5. [Criptografía básica: hash, cifrado simétrico/asimétrico](crypto/crypto1.md)
 
-Bienvenido a la sección de fundamentos. Aquí empieza el dojo.
+---
+
+> “Comprender antes de configurar. Saber antes de solucionar.”

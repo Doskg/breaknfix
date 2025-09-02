@@ -1,12 +1,23 @@
-
 ---
 layout: default
-title: Desafíos
+title: Desafíos Técnicos
 ---
 
-# 🎯 Desafíos Técnicos
+# 🎯 Desafíos Técnicos  
+**Retos prácticos para aplicar lo aprendido en escenarios complejos.**
 
-Retos prácticos para aplicar lo aprendido en escenarios reales o simulados. Cada desafío incluye objetivos, condiciones iniciales y criterios de éxito.
+Esta sección presenta desafíos técnicos con mínima guía. Aquí pones a prueba tus conocimientos, creatividad y capacidad de resolución. Cada reto está diseñado para simular situaciones reales que podrías enfrentar en campo.
 
-- [Reto 1: Red con 3 routers](/desafios/reto1)
-- [Reto 2: Configuración sin rutas estáticas](/desafios/reto2)
+---
+
+## 🚧 Retos disponibles
+
+1. [Diseña una red para una oficina con 3 departamentos](red/red1.md)
+2. [Configura un router con NAT, DHCP y ACLs](router/router1.md)
+3. [Detecta y corrige una configuración insegura en Linux](linux/linux1.md)
+4. [Simula un ataque DoS controlado en laboratorio](dos/dos1.md)
+5. [Audita la seguridad de una red doméstica](auditoria/auditoria1.md)
+
+---
+
+> “El conocimiento se prueba cuando se enfrenta al caos.”
