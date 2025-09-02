@@ -10,7 +10,7 @@ Bienvenido a mi bitácora técnica. Aquí registro mi travesía por el mundo de 
 
 ---
 
-## 🧪 [Práctica](/networks/practica/)
+## 🧪 [Práctica](practica)
 Ejercicios técnicos para aplicar conceptos clave como subneteo, VLANs, y configuración básica.
 
 ## 📚 [Fundamentos](/networks/fundamentos/index.md)
