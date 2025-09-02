@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreaknFix.io</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #E0E0E0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+        }
+        .card {
+            background-color: #1E1E1E;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid #333;
+        }
+        .link-item {
+            display: block;
+            background-color: #2D2D2D;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .link-item:hover {
+            transform: translateY(-5px);
+            background-color: #3A3A3A;
+        }
+        .icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <div class="container min-h-screen flex items-center justify-center">
+        <div class="card w-full">
+            <header class="text-center mb-10">
+                <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-2">
+                    🧠 BreaknFix.io
+                </h1>
+                <p class="text-xl text-gray-400">
+                    Documentación técnica, reconstrucción precisa, aprendizaje modular.
+                </p>
+                <hr class="w-1/4 mx-auto my-6 border-gray-600">
+                <p class="text-lg text-gray-400">
+                    Bienvenido a mi bitácora técnica. Aquí registro mi travesía por el mundo de las redes y la ciberseguridad, estructurada en dos rutas complementarias:
+                </p>
+            </header>
+
+            <main class="grid grid-cols-1 gap-4">
+                <a href="networks/indexnet.md" class="link-item flex items-center">
+                    <span class="icon text-teal-400">🧪</span>
+                    <div>
+                        <h2 class="text-2xl font-semibold text-white">Networks</h2>
+                        <p class="text-gray-400 mt-1">
+                            Ejercicios y fundamentos para construir una base sólida.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="cybersecurity/index2.md" class="link-item flex items-center">
+                    <span class="icon text-blue-500">🎯</span>
+                    <div>
+                        <h2 class="text-2xl font-semibold text-white">Security</h2>
+                        <p class="text-gray-400 mt-1">
+                            Retos prácticos para poner a prueba lo aprendido y explorar escenarios complejos.
+                        </p>
+                    </div>
+                </a>
+            </main>
+
+            <footer class="mt-10 text-center text-gray-500 text-sm italic">
+                “Cada error documentado es una mejora que no se repite por accidente.”
+            </footer>
+        </div>
+    </div>
+
+</body>
+</html>
