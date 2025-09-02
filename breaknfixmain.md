@@ -10,7 +10,7 @@ Welcome to my technical logbook. Here I record my journey through the world of n
 
 ---
 
-## 🧪 [Networks](networks)
+## 🧪 [Networks](networks/networksmain)
 Exercises and fundamentals to build a solid foundation.
 
 ## 🎯 [Security](security)
