@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyberdojo - BreaknFix.io</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #0A0E1A;
+      --color-primary: #00FFFF;
+      --color-accent: #39FF14;
+      --color-alert: #FF3131;
+      --color-text: #E0E0E0;
+      --font-main: 'Montserrat', sans-serif;
+      --font-accent: 'Orbitron', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-main);
+      margin: 0;
+      padding: 0;
+      background: var(--color-bg);
+      color: var(--color-text);
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    #fadeCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      z-index: 10;
+      position: relative;
+    }
+
+    header h1 {
+      font-family: var(--font-accent);
+      font-size: 3rem;
+      color: var(--color-primary);
+      letter-spacing: 4px;
+      text-shadow: 0 0 20px var(--color-primary);
+      animation: pulseGlow 3s infinite ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0% { text-shadow: 0 0 5px var(--color-primary); }
+      50% { text-shadow: 0 0 25px var(--color-accent); }
+      100% { text-shadow: 0 0 5px var(--color-primary); }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      z-index: 10;
+      position: relative;
+    }
+
+    .card {
+      background: rgba(20, 20, 20, 0.85);
+      border: 2px solid var(--color-accent);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+      cursor: pointer;
+    }
+
+    .card h2 {
+      font-family: var(--font-accent);
+      color: var(--color-alert);
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px var(--color-alert);
+    }
+
+    .card p {
+      color: var(--color-text);
+      font-size: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-style: italic;
+      border-top: 1px solid var(--color-primary);
+      margin-top: auto;
+      text-shadow: 0 0 5px var(--color-accent);
+      z-index: 10;
+      position: relative;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(10, 14, 26, 0.95);
+      border: 2px solid var(--color-alert);
+      border-radius: 15px;
+      padding: 2rem;
+      z-index: 20;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 0 40px var(--color-alert);
+      color: var(--color-text);
+    }
+
+    .modal h3 {
+      font-family: var(--font-accent);
+      color: var(--color-primary);
+    }
+
+    .closeBtn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--color-accent);
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="fadeCanvas"></canvas>
+
+<header>
+  <h1>Cyberdojo Interactivo</h1>
+  <p>Haz click en cualquier tarjeta para desbloquear conocimiento</p>
+</header>
+
+<main class="container">
+  <div class="card" data-info="Hydra: herramienta de fuerza bruta para protocolos como SSH, FTP, HTTP. Ideal para pruebas controladas.">
+    <h2>Hydra</h2>
+    <p>Click para más info</p>
+  </div>
+  <div class="card" data-info="Kali Linux: sistema operativo para pentesters. Incluye herramientas como Nmap, Metasploit, Burp Suite.">
+    <h2>Kali Linux</h2>
+    <p>Click para más info</p>
+  </div>
+  <div class="card" data-info="Sniffing: captura de paquetes con Wireshark o tcpdump. Útil para detectar tráfico malicioso.">
+    <h2>Sniffing</h2>
+    <p>Click para más info</p>
+  </div>
+  <div class="card" data-info="Exploit Dev: creación de scripts para vulnerabilidades. Requiere conocimiento de memoria, buffers y ensamblador.">
+    <h2>Exploit Dev</h2>
+    <p>Click para más info</p>
+  </div>
+</main>
+
+<footer>
+  “Cada comando ejecutado es un paso hacia el dominio técnico.”
+</footer>
+
+<div class="modal" id="infoModal">
+  <span class="closeBtn" id="closeModal">&times;</span>
+  <h3 id="modalTitle"></h3>
+  <p id="modalContent"></p>
+</div>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const modal = document.getElementById('infoModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalContent = document.getElementById('modalContent');
+  const closeModal = document.getElementById('closeModal');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modalTitle.textContent = card.querySelector('h2').textContent;
+      modalContent.textContent = card.dataset.info;
+    });
+  });
+
+  closeModal.addEventListener('click', () => modal.style.display = 'none');
+  window.addEventListener('click', e => { if(e.target === modal) modal.style.display = 'none'; });
+
+  const canvas = document.getElementById('fadeCanvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const particles = [];
+  for (let i = 0; i < 100; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      alpha: 1,
+      size: Math.random() * 2 + 1,
+      speed: Math.random() * 0.5 + 0.2
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      ctx.fillStyle = `rgba(0, 255, 255, ${p.alpha})`;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+      p.y -= p.speed;
+      p.alpha -= 0.005;
+      if (p.alpha <= 0 || p.y < 0) {
+        p.x = Math.random() * canvas.width;
+        p.y = canvas.height;
+        p.alpha = 1;
+      }
+    });
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
+
+</body>
+</html>
