@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafíos de Ciberseguridad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* (El CSS es el mismo que los anteriores, puedes copiarlo y pegarlo aquí) */
+        :root {
+            --color-primary: #040F1D;
+            --color-secondary: #FF4D4D;
+            --color-tertiary: #B8C3DC;
+            --color-quaternary: #FF7B7B;
+            --gradient-bg: radial-gradient(circle at center, #07172B 0%, #030811 100%);
+            --font-main: 'Montserrat', sans-serif;
+            --font-accent: 'Orbitron', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            background: var(--gradient-bg);
+            color: var(--color-tertiary);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        @keyframes shieldGrid {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: repeating-linear-gradient(45deg, rgba(255,77,77,0.1) 0px, transparent 1px, transparent 20px), repeating-linear-gradient(-45deg, rgba(255,77,77,0.1) 0px, transparent 1px, transparent 20px);
+            background-size: 40px 40px;
+            animation: shieldGrid 15s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0 20px 0;
+            border-bottom: 2px solid var(--color-secondary);
+        }
+
+        header h1 {
+            font-family: var(--font-accent);
+            color: var(--color-secondary);
+            font-size: 3em;
+            text-shadow: 0 0 10px var(--color-secondary);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--color-tertiary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--color-quaternary);
+        }
+        
+        .content-list {
+            padding: 50px 0;
+        }
+        
+        .content-card {
+            background-color: #07172B;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 77, 77, 0.2);
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(255, 77, 77, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .content-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 0 25px rgba(255, 77, 77, 0.3);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-header h3 {
+            font-family: var(--font-accent);
+            color: var(--color-quaternary);
+            margin: 0;
+        }
+
+        .card-toggle {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .content-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            padding-top: 0;
+        }
+
+        .content-body.expanded {
+            max-height: 500px;
+            padding-top: 20px;
+        }
+
+        .example {
+            font-style: italic;
+            color: var(--color-quaternary);
+            display: block;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: var(--color-primary);
+            border-top: 2px solid var(--color-secondary);
+            box-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Módulo de Desafíos</h1>
+        <p>El campo de batalla. Aquí resuelves problemas del mundo real.</p>
+        <a href="/RUTA REDES 2025/SITIO DE REDES Y CIBERSEC/html/cybersecurity/indexNeonCyber.html" class="back-link">← Volver al Hub</a>
+    </header>
+
+    <main class="container">
+        <section class="content-list">
+            <div class="content-card" onclick="toggleCard(this)">
+                <div class="card-header">
+                    <h3>1. Respuesta a un Ataque de Ransomware</h3>
+                    <span class="card-toggle">+</span>
+                </div>
+                <div class="content-body">
+                    <p>Simula un ataque de ransomware en un entorno virtualizado, documenta la respuesta a incidentes paso a paso, y presenta un plan de recuperación.</p>
+                    <span class="example">Tareas: Identificar el malware, aislar el sistema, y buscar una clave de descifrado.</span>
+                </div>
+            </div>
+
+            <div class="content-card" onclick="toggleCard(this)">
+                <div class="card-header">
+                    <h3>2. Análisis Forense de un USB</h3>
+                    <span class="card-toggle">+</span>
+                </div>
+                <div class="content-body">
+                    <p>Realiza un análisis forense de una imagen de memoria de un USB para recuperar archivos borrados, identificar malware y reconstruir la cronología de eventos.</p>
+                    <span class="example">Tareas: Uso de herramientas como Autopsy o FTK Imager para el análisis.</span>
+                </div>
+            </div>
+
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 BreakNFix. Creado con pasión por el conocimiento.</p>
+    </footer>
+
+    <script>
+        function toggleCard(card) {
+            const body = card.querySelector('.content-body');
+            const toggle = card.querySelector('.card-toggle');
+            
+            if (body.classList.contains('expanded')) {
+                body.classList.remove('expanded');
+                toggle.textContent = '+';
+                toggle.style.transform = 'rotate(0deg)';
+            } else {
+                body.classList.add('expanded');
+                toggle.textContent = '-';
+                toggle.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+</body>
+</html>
