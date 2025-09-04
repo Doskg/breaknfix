@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misiones de Campo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* (CSS similar al de fundamentos-redes.html) */
+        :root {
+            --color-primary: #0A0E1A;
+            --color-secondary: #33FF33;
+            --color-tertiary: #A3FFC2;
+            --color-quaternary: #66FF66;
+            --gradient-bg: radial-gradient(circle at center, #0B1123 0%, #060810 100%);
+            --font-main: 'Montserrat', sans-serif;
+            --font-accent: 'Orbitron', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            background: var(--gradient-bg);
+            color: var(--color-quaternary);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        @keyframes dataFlow {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 100% 100%, 100% 100%; }
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(51, 255, 51, 0.08) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(51, 255, 51, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: dataFlow 25s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0 20px 0;
+            border-bottom: 2px solid var(--color-secondary);
+        }
+
+        header h1 {
+            font-family: var(--font-accent);
+            color: var(--color-secondary);
+            font-size: 3em;
+            text-shadow: 0 0 10px var(--color-secondary);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--color-quaternary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--color-tertiary);
+        }
+        
+        .content-list {
+            padding: 50px 0;
+        }
+        
+        .content-card {
+            background-color: #0E1428;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(51, 255, 51, 0.2);
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(51, 255, 51, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .content-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 0 25px rgba(51, 255, 51, 0.3);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-header h3 {
+            font-family: var(--font-accent);
+            color: var(--color-quaternary);
+            margin: 0;
+        }
+
+        .card-toggle {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .content-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            padding-top: 0;
+        }
+
+        .content-body.expanded {
+            max-height: 500px;
+            padding-top: 20px;
+        }
+
+        .example {
+            font-style: italic;
+            color: var(--color-tertiary);
+            display: block;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: var(--color-primary);
+            border-top: 2px solid var(--color-secondary);
+            box-shadow: 0 0 20px rgba(51, 255, 51, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Misiones de Campo</h1>
+        <p>Prácticas en entornos de red simulados.</p>
+        <a href="/RUTA REDES 2025/SITIO DE REDES Y CIBERSEC/html/networks/IndexxNetMain.html" class="back-link">← Volver al Portal Estelar</a>
+    </header>
+
+    <main class="container">
+        <section class="content-list">
+            <div class="content-card" onclick="toggleCard(this)">
+                <div class="card-header">
+                    <h3>1. Configurar Conectividad de la Flota</h3>
+                    <span class="card-toggle">+</span>
+                </div>
+                <div class="content-body">
+                    <p>Aprende a usar Packet Tracer para conectar diferentes naves (dispositivos) en una red y establecer rutas de datos seguras.</p>
+                    <span class="example">Ejemplo: Configurar un router central para dirigir el tráfico entre naves de reconocimiento y de carga.</span>
+                </div>
+            </div>
+
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Dojo de Networking. Hecho para la Federación de Redes.</p>
+    </footer>
+
+    <script>
+        function toggleCard(card) {
+            const body = card.querySelector('.content-body');
+            const toggle = card.querySelector('.card-toggle');
+            
+            if (body.classList.contains('expanded')) {
+                body.classList.remove('expanded');
+                toggle.textContent = '+';
+            } else {
+                body.classList.add('expanded');
+                toggle.textContent = '-';
+            }
+        }
+    </script>
+</body>
+</html>
