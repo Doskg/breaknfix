@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo BreakNFix - Ciberseguridad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #040F1D;
+            --color-secondary: #FF4D4D;
+            --color-tertiary: #B8C3DC;
+            --color-quaternary: #FF7B7B;
+            --gradient-bg: radial-gradient(circle at center, #07172B 0%, #030811 100%);
+            --font-main: 'Montserrat', sans-serif;
+            --font-accent: 'Orbitron', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            background: var(--gradient-bg);
+            color: var(--color-tertiary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        @keyframes shieldGrid {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: repeating-linear-gradient(45deg, rgba(255,77,77,0.1) 0px, transparent 1px, transparent 20px), repeating-linear-gradient(-45deg, rgba(255,77,77,0.1) 0px, transparent 1px, transparent 20px);
+            background-size: 40px 40px;
+            animation: shieldGrid 15s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        header {
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-family: var(--font-accent);
+            color: var(--color-secondary);
+            font-size: 4em;
+            text-shadow: 0 0 10px var(--color-secondary);
+        }
+        
+        header p {
+            font-size: 1.2em;
+        }
+
+        .hub-grid {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hub-card {
+            background-color: transparent;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 2px solid var(--color-secondary);
+            box-shadow: 0 0 20px rgba(255, 77, 77, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0 auto;
+        }
+
+        .hub-card:hover {
+            transform: scale(1.1);
+            background-color: rgba(255, 77, 77, 0.1);
+            box-shadow: 0 0 40px rgba(255, 77, 77, 0.5);
+        }
+
+        .hub-card .icon {
+            width: 80px;
+            height: 80px;
+            stroke: var(--color-secondary);
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .hub-card:hover .icon {
+            transform: rotateY(360deg);
+        }
+
+        .hub-card h2 {
+            font-family: var(--font-accent);
+            color: var(--color-quaternary);
+            font-size: 1.5em;
+            margin: 0;
+            text-shadow: 0 0 5px var(--color-secondary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: var(--color-primary);
+            border-top: 2px solid var(--color-secondary);
+            margin-top: 50px;
+            box-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BreakNFix</h1>
+        <p>Elige tu Módulo de Ciberseguridad</p>
+    </header>
+
+    <main class="hub-grid">
+        <a class="hub-card" href="/RUTA REDES 2025/SITIO DE REDES Y CIBERSEC/html/cybersecurity/fundamentos/indexxxfund.html">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            <h2>Fundamentos</h2>
+        </a>
+        <a class="hub-card" href="/RUTA REDES 2025/SITIO DE REDES Y CIBERSEC/html/cybersecurity/practica/indexxxpractica.html">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77z"></path>
+            </svg>
+            <h2>Práctica</h2>
+        </a>
+       
+        </a>
+        <a class="hub-card" href="/RUTA REDES 2025/SITIO DE REDES Y CIBERSEC/html/cybersecurity/desafios/indexxxdesafios.html">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+            <h2>Desafíos</h2>
+        </a>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 BreakNFix. Creado con pasión por el conocimiento.</p>
+    </footer>
+</body>
+</html>
