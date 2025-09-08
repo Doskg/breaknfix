@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 4 – Configuración de un Servidor DHCP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    body { background: radial-gradient(circle at center, #0B1123, #060810); color: #66FF66; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; }
+    .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+    h1 { font-family: 'Orbitron', sans-serif; color: #33FF33; text-align: center; text-shadow: 0 0 10px #33FF33; }
+    .section { margin-top: 40px; }
+    .section h2 { color: #A3FFC2; font-family: 'Orbitron', sans-serif; }
+    .step-container { margin-bottom: 30px; }
+    .step-container p { font-size: 1.1em; }
+    .screenshot { max-width: 100%; border: 1px solid #33FF33; box-shadow: 0 0 10px rgba(51,255,51,0.3); border-radius: 5px; margin-top: 10px; }
+    .back-link { display: inline-block; margin-top: 30px; color: #33FF33; text-decoration: none; border: 1px solid #33FF33; padding: 8px 16px; border-radius: 5px; box-shadow: 0 0 10px rgba(51,255,51,0.3); font-family: 'Orbitron', sans-serif; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ejercicio 4 – Configuración de un Servidor DHCP</h1>
+
+    <div class="section">
+      <h2>🎯 Objetivo</h2>
+      <p>Configurar un router para que actúe como un servidor DHCP y asigne direcciones IP automáticamente a las computadoras de la red, simplificando la administración de IPs.</p>
+    </div>
+
+    <div class="section">
+      <h2>🧭 Topología</h2>
+      <ul>
+        <li>1 Router (1941)</li>
+        <li>1 Switch (2960)</li>
+        <li>2 PCs (PC0 y PC1)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🛠️ Resolución</h2>
+      <p>Sigue los siguientes pasos y pega tus capturas de pantalla para documentar el proceso.</p>
+      
+      <div class="step-container">
+        <h3>Paso 1: Armar la topología</h3>
+        <p>Coloca un <strong>Router</strong>, un <strong>Switch</strong> y dos <strong>PC</strong> en el área de trabajo. Conéctalos usando cables de cobre directo. </p>
+        <img src="../capturas/ejercicio4_1.png" alt="Diagrama de topología con router, switch y PCs" class="screenshot">
+      </div>
+      
+      <div class="step-container">
+        <h3>Paso 2: Configurar la interfaz del router</h3>
+        <p>Haz clic en el <strong>Router</strong>. Ve a la pestaña <strong>Config</strong> y selecciona la interfaz conectada al switch (ej. <code>GigabitEthernet0/0</code>). Configura su dirección IP estática (<code>192.168.1.1</code>) y la máscara de subred (<code>255.255.255.0</code>). Asegúrate de encenderla.</p>
+        <img src="../capturas/ejercicio4_2.png" alt="Configuración de la interfaz del router" class="screenshot">
+      </div>
+      
+      <div class="step-container">
+        <h3>Paso 3: Excluir direcciones IP del pool DHCP</h3>
+        <p>En el <strong>Router</strong>, ve a la pestaña <strong>CLI</strong>. Usa el comando <code>ip dhcp excluded-address 192.168.1.1 192.168.1.9</code>. Esto evita que el router asigne direcciones importantes como la suya.</p>
+        <img src="../capturas/ejercicio4_3.png" alt="Excluir direcciones IP en el router" class="screenshot">
+      </div>
+      
+      <div class="step-container">
+        <h3>Paso 4: Crear el pool DHCP</h3>
+        <p>Aún en la **CLI** del router, crea un pool con los siguientes comandos: <code>ip dhcp pool RED_LOCAL</code>, <code>network 192.168.1.0 255.255.255.0</code> y <code>default-router 192.168.1.1</code>. Esto define el rango de IPs a asignar y el gateway predeterminado.</p>
+        <img src="../capturas/ejercicio4_4.png" alt="Creación del pool DHCP" class="screenshot">
+      </div>
+
+      <div class="step-container">
+        <h3>Paso 5: Verificar la PC</h3>
+        <p>En **PC0** y **PC1**, ve a <strong>Desktop</strong> y <strong>IP Configuration</strong>. Selecciona la opción <strong>DHCP</strong>. Deberían recibir una dirección IP automáticamente del pool que configuraste.</p>
+        <img src="../capturas/ejercicio4_5.png" alt="Obtener IP por DHCP en la PC" class="screenshot">
+      </div>
+
+      <div class="step-container">
+        <h3>Paso 6: Verificar la conectividad</h3>
+        <p>Desde **PC0**, abre el <strong>Command Prompt</strong> y usa el comando <code>ping 192.168.1.1</code> para verificar la conexión con el router y <code>ping 192.168.1.11</code> (o la IP que se le haya asignado a PC1) para verificar la conexión entre ambas PCs.</p>
+        <img src="../capturas/ejercicio4_6.png" alt="Prueba de ping exitosa" class="screenshot">
+      </div>
+
+    </div>
+
+    <a href="../index.html" class="back-link">← Volver al Portal Estelar</a>
+  </div>
+</body>
+</html>

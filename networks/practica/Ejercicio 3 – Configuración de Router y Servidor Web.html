@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3 – Configuración de Router y Servidor Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    body { background: radial-gradient(circle at center, #0B1123, #060810); color: #66FF66; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; }
+    .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+    h1 { font-family: 'Orbitron', sans-serif; color: #33FF33; text-align: center; text-shadow: 0 0 10px #33FF33; }
+    .section { margin-top: 40px; }
+    .section h2 { color: #A3FFC2; font-family: 'Orbitron', sans-serif; }
+    .step-container { margin-bottom: 30px; }
+    .step-container p { font-size: 1.1em; }
+    .screenshot { max-width: 100%; border: 1px solid #33FF33; box-shadow: 0 0 10px rgba(51,255,51,0.3); border-radius: 5px; margin-top: 10px; }
+    .back-link { display: inline-block; margin-top: 30px; color: #33FF33; text-decoration: none; border: 1px solid #33FF33; padding: 8px 16px; border-radius: 5px; box-shadow: 0 0 10px rgba(51,255,51,0.3); font-family: 'Orbitron', sans-serif; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ejercicio 3 – Configuración de Router y Servidor Web</h1>
+
+    <div class="section">
+      <h2>🎯 Objetivo</h2>
+      <p>Configurar una red con un router, un switch, una PC y un servidor para que la PC pueda acceder a una página web alojada en el servidor. Esto demuestra la configuración de un gateway y servicios de red.</p>
+    </div>
+
+    <div class="section">
+      <h2>🧭 Topología</h2>
+      <ul>
+        <li>1 Router (1941)</li>
+        <li>1 Switch (2960)</li>
+        <li>1 PC (PC0)</li>
+        <li>1 Servidor (Server0)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🛠️ Resolución</h2>
+      <p>Sigue los siguientes pasos y pega tus capturas de pantalla para documentar el proceso.</p>
+      
+      <div class="step-container">
+        <h3>Paso 1: Armar la topología</h3>
+        <p>Coloca un <strong>Router</strong>, un <strong>Switch</strong>, una <strong>PC</strong> y un <strong>Servidor</strong>. Conéctalos usando cables de cobre directo. El servidor y la PC se conectan al switch, y el switch se conecta al router.</p>
+        <img src="../capturas/ejercicio3_1.png" alt="Diagrama de topología de la red con router y servidor" class="screenshot">
+      </div>
+      
+      <div class="step-container">
+        <h3>Paso 2: Configurar la dirección IP del servidor</h3>
+        <p>Haz clic en el <strong>Servidor</strong>, ve a la pestaña <strong>Desktop</strong> y luego a <strong>IP Configuration</strong>. Configura una dirección IP estática (ej. <code>192.168.1.5</code>) y la máscara de subred (<code>255.255.255.0</code>). El Gateway será la dirección IP del router (<code>192.168.1.1</code>).</p>
+        <img src="../capturas/ejercicio3_2.png" alt="Configuración de IP en el Servidor" class="screenshot">
+      </div>
+      
+      <div class="step-container">
+        <h3>Paso 3: Activar el servicio HTTP en el servidor</h3>
+        <p>En el <strong>Servidor</strong>, ve a la pestaña <strong>Services</strong> y selecciona <strong>HTTP</strong>. Asegúrate de que el servicio esté **ON**.</p>
+        <img src="../capturas/ejercicio3_3.png" alt="Activación del servicio HTTP" class="screenshot">
+      </div>
+      
+      <div class="step-container">
+        <h3>Paso 4: Configurar la dirección IP de PC0</h3>
+        <p>Haz clic en <strong>PC0</strong>, ve a <strong>Desktop</strong> y <strong>IP Configuration</strong>. Configura una dirección IP estática (ej. <code>192.168.1.10</code>) y la máscara de subred (<code>255.255.255.0</code>). El Gateway también será la dirección IP del router (<code>192.168.1.1</code>).</p>
+        <img src="../capturas/ejercicio3_4.png" alt="Configuración de IP en la PC" class="screenshot">
+      </div>
+
+      <div class="step-container">
+        <h3>Paso 5: Configurar la dirección IP del router</h3>
+        <p>Haz clic en el <strong>Router</strong>, ve a la pestaña **Config** y selecciona la interfaz que está conectada al switch (ej. `GigabitEthernet0/0`). Configura la dirección IP de esa interfaz (<code>192.168.1.1</code>) y la máscara de subred. ¡Asegúrate de activar la interfaz!</p>
+        <img src="../capturas/ejercicio3_5.png" alt="Configuración de la interfaz del Router" class="screenshot">
+      </div>
+
+      <div class="step-container">
+        <h3>Paso 6: Verificar la conectividad</h3>
+        <p>Desde <strong>PC0</strong>, ve al navegador web (<strong>Web Browser</strong>) y escribe la dirección IP del servidor (<code>192.168.1.5</code>) para verificar que puedes ver la página web. Adicionalmente, puedes usar el **Command Prompt** y hacer un <code>ping 192.168.1.5</code> para verificar la conectividad.</p>
+        <img src="../capturas/ejercicio3_6.png" alt="Accediendo al servidor web" class="screenshot">
+      </div>
+
+    </div>
+
+    <a href="../index.html" class="back-link">← Volver al Portal Estelar</a>
+  </div>
+</body>
+</html>

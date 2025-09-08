@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 5 – Configuración de Enrutamiento Estático</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    body { background: radial-gradient(circle at center, #0B1123, #060810); color: #66FF66; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; }
+    .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+    h1 { font-family: 'Orbitron', sans-serif; color: #33FF33; text-align: center; text-shadow: 0 0 10px #33FF33; }
+    .section { margin-top: 40px; }
+    .section h2 { color: #A3FFC2; font-family: 'Orbitron', sans-serif; }
+    .step-container { margin-bottom: 30px; }
+    .step-container p { font-size: 1.1em; }
+    .screenshot { max-width: 100%; border: 1px solid #33FF33; box-shadow: 0 0 10px rgba(51,255,51,0.3); border-radius: 5px; margin-top: 10px; }
+    .back-link { display: inline-block; margin-top: 30px; color: #33FF33; text-decoration: none; border: 1px solid #33FF33; padding: 8px 16px; border-radius: 5px; box-shadow: 0 0 10px rgba(51,255,51,0.3); font-family: 'Orbitron', sans-serif; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ejercicio 5 – Configuración de Enrutamiento Estático</h1>
+
+    <div class="section">
+      <h2>🎯 Objetivo</h2>
+      <p>Configurar una red con dos routers para que puedan dirigir el tráfico entre dos redes diferentes, demostrando el concepto de enrutamiento estático para la conectividad entre subredes.</p>
+    </div>
+
+    <div class="section">
+      <h2>🧭 Topología</h2>
+      <ul>
+        <li>2 Routers (1941)</li>
+        <li>2 Switches (2960)</li>
+        <li>2 PCs (PC0 y PC1)</li>
+      </ul>
+      <p>La red LAN 1 se usará con el rango de direcciones <code>192.168.1.0/24</code>. La red LAN 2 se usará con el rango de direcciones <code>192.168.2.0/24</code>. La red que conecta a los dos routers será <code>10.0.0.0/24</code>.</p>
+    </div>
+
+    <div class="section">
+      <h2>🛠️ Resolución</h2>
+      <p>Sigue los siguientes pasos y pega tus capturas de pantalla para documentar el proceso.</p>
+      
+      <div class="step-container">
+        <h3>Paso 1: Armar la topología</h3>
+        <p>Coloca los componentes y conéctalos como se describe en la topología. Recuerda usar un cable de cobre cruzado entre los dos routers.</p>
+        <img src="../capturas/ejercicio5_1.png" alt="Diagrama de topología con dos routers" class="screenshot">
+      </div>
+      
+      <div class="step-container">
+        <h3>Paso 2: Configurar las interfaces del Router 1</h3>
+        <p>Configura la interfaz que se conecta al Switch (ej. <code>GigabitEthernet0/0</code>) con la IP <code>192.168.1.1</code> y la interfaz que se conecta al Router 2 (ej. <code>GigabitEthernet0/1</code>) con la IP <code>10.0.0.1</code>. Asegúrate de encender ambas interfaces.</p>
+        <img src="../capturas/ejercicio5_2.png" alt="Configuración de interfaces en Router 1" class="screenshot">
+      </div>
+      
+      <div class="step-container">
+        <h3>Paso 3: Configurar las interfaces del Router 2</h3>
+        <p>Configura la interfaz que se conecta al Switch (ej. <code>GigabitEthernet0/0</code>) con la IP <code>192.168.2.1</code> y la interfaz que se conecta al Router 1 (ej. <code>GigabitEthernet0/1</code>) con la IP <code>10.0.0.2</code>. Asegúrate de encender ambas interfaces.</p>
+        <img src="../capturas/ejercicio5_3.png" alt="Configuración de interfaces en Router 2" class="screenshot">
+      </div>
+      
+      <div class="step-container">
+        <h3>Paso 4: Configurar las IPs de las PCs</h3>
+        <p>En **PC0**, configura su IP a <code>192.168.1.10</code> y el Gateway a <code>192.168.1.1</code>. En **PC1**, configura su IP a <code>192.168.2.10</code> y el Gateway a <code>192.168.2.1</code>.</p>
+        <img src="../capturas/ejercicio5_4.png" alt="Configuración de IP en las PCs" class="screenshot">
+      </div>
+      
+      <div class="step-container">
+        <h3>Paso 5: Configurar la ruta estática en Router 1</h3>
+        <p>En la **CLI** de Router 1, usa el comando <code>ip route 192.168.2.0 255.255.255.0 10.0.0.2</code>. Esto le dice a Router 1 que para llegar a la red <code>192.168.2.0</code>, debe enviar el tráfico a través del Router 2.</p>
+        <img src="../capturas/ejercicio5_5.png" alt="Configuración de la ruta estática en Router 1" class="screenshot">
+      </div>
+
+      <div class="step-container">
+        <h3>Paso 6: Configurar la ruta estática en Router 2</h3>
+        <p>En la **CLI** de Router 2, usa el comando <code>ip route 192.168.1.0 255.255.255.0 10.0.0.1</code>. Esto le dice a Router 2 que para llegar a la red <code>192.168.1.0</code>, debe enviar el tráfico a través del Router 1.</p>
+        <img src="../capturas/ejercicio5_6.png" alt="Configuración de la ruta estática en Router 2" class="screenshot">
+      </div>
+      
+      <div class="step-container">
+        <h3>Paso 7: Verificar la conectividad</h3>
+        <p>Desde la <strong>PC0</strong>, abre el <strong>Command Prompt</strong> y haz <code>ping 192.168.2.10</code>. Si todo está correcto, el ping será exitoso, demostrando la comunicación entre ambas redes.</p>
+        <img src="../capturas/ejercicio5_7.png" alt="Prueba de ping exitosa entre las redes" class="screenshot">
+      </div>
+
+    </div>
+
+    <a href="../index.html" class="back-link">← Volver al Portal Estelar</a>
+  </div>
+</body>
+</html>
